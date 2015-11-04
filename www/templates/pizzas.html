@@ -1,0 +1,27 @@
+<ion-view view-title="פיצות">
+  <ion-content class="dotted">
+		<nav class="navbar">
+			<form class="navbar-center" role="search">
+		        <div class="form-group">
+		          <input id="search" ng-model="query" type="text" class="form-control" placeholder="חיפוש">
+		        </div>
+		    </form>
+		</nav>
+		<ul class="list-group">
+			 <li menu-close class="list-group-item dish" ng-repeat="dish in menu.pizzas | filter: query">
+				<div class="plus">
+			 		<img width="40" height="40" src="../img/plus.png"/>
+			 	</div>
+			 	<div class="dish-image">
+				 	<img  ng-src="{{dish.image}}"/>
+				</div>
+			 	<div class="dish-details">
+			 		{{dish.name}}<br><br>{{dish.price}}
+			 	</div>
+
+
+			 </li>
+		</ul>
+	<button class="order btn btn-block reddish">הזמן</button>
+	</ion-content>
+</ion-view>
